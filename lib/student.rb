@@ -44,6 +44,7 @@ class Student
   def self.create(name, grade)
     student = Student.new(name, grade)
     student.save
+    student
   end
 
   def self.new_from_db(array)
@@ -67,8 +68,8 @@ class Student
 
   def update
     sql = <<-SQL
-    UPDATE students 
-    SET name = ?, grade = ? 
+    UPDATE students
+    SET name = ?, grade = ?
     WHERE id = ?
     SQL
     DB[:conn].execute(sql, self.name, self.grade, self.id)
