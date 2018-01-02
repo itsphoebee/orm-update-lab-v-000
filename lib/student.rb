@@ -50,7 +50,7 @@ class Student
     id = array[0]
     name = array[1]
     grade = array[2]
-    new_student = Student.new
+    new_student = Student.new(id, name, grade)
   end
 
   def self.find_by_name(name)
