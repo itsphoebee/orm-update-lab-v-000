@@ -48,10 +48,7 @@ class Student
   end
 
   def self.new_from_db(array)
-    id = array[0]
-    name = array[1]
-    grade = array[2]
-    new_student = Student.new(name, grade, id)
+    new_student = Student.new(array[1], array[2], array[0])
   end
 
   def self.find_by_name(name)
