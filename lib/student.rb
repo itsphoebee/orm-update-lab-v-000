@@ -7,7 +7,7 @@ class Student
   def initialize(name, grade, id=nil)
     @name = name
     @grade = grade
-    @id = id 
+    @id = id
   end
 
   def self.create_table
@@ -18,8 +18,8 @@ class Student
         grade INTEGER
         )
         SQL
-  # Remember, you can access your database connection anywhere in this class
-  #  with DB[:conn]
+    DB[:conn].execute(sql)
+  end
 
 
 end
